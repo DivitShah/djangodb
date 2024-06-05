@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>New User Joining Form</h1>
+    <br/>
+    <form method="POST" action="{% url 'join' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="First Name", name="fname", value="{{fname}}">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Last Name", name="lname", value="{{lname}}">
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Age", name="age", value="{{age}}">
+        </div>
+        <div class="mb-3">
+            
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email", name="email", value="{{email}}">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password", name="password", value="{{password}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up!</button>
+    </form>
+{% endblock %}
